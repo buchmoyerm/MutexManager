@@ -51,9 +51,12 @@ namespace MutexManager
                 IntPtr.Zero);
         }
 
-        static public void Stop()
+        public static void Stop()
         {
-            mutex.ReleaseMutex();
+            if (mutex != null)
+            {
+                mutex.ReleaseMutex();
+            }
         }
     }
 }
